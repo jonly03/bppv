@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best Pride Parade Photo Vote</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <h2 id="header_title">Vote For the Best 2019 Pride Parade Photo</h2>
+
+        <!-- Photos will be dynamically populated using jQuery-->
+    </div>
+
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+    <!--  -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+
+    <script>
+        // My web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBDwoH2Y6YVjYb2RUtVEUUt6X5hgBRKZIM",
+            authDomain: "best-parade-photo.firebaseapp.com",
+            databaseURL: "https://best-parade-photo.firebaseio.com",
+            projectId: "best-parade-photo",
+            storageBucket: "best-parade-photo.appspot.com",
+            messagingSenderId: "276048593394",
+            appId: "1:276048593394:web:f30e082d1027ac1b242b6b"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the firebase database service
+        var database = firebase.database();
+    </script>
+
+    <!-- Our JS -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
