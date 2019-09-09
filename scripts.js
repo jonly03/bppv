@@ -32,9 +32,9 @@ $(document).ready(() => {
         },
         {
             id: "photo_love_is_a_terrible_thing_to_hate",
-            name: "Friends who love LOVE",
+            name: "Love Is a Terrible Thing to Hate",
             srcUrl: "https://images.scribblelive.com/2019/8/31/f9a08979-b783-47db-8cb3-ff8c86aa576f.jpg",
-            altText: "Friends who love LOVE 2019 Pride Parade photo"
+            altText: "Love Is a Terrible Thing to Hate 2019 Pride Parade photo"
 
         },
         {
@@ -90,8 +90,7 @@ $(document).ready(() => {
     */
 
 
-    // listen to clicking on vote button only if the user hasn't voted before
-    // if (!userHasVoted) {
+    // listen to clicking on vote button
     $('#container').on('click', '.vote_btn', event => {
         // Stop the click event from bubbling up
         event.stopPropagation();
@@ -103,7 +102,7 @@ $(document).ready(() => {
         // click event current target is the .vote_btn
         // We gave .vote_btn the data attribute as the unique id in the paradePhotosArray so that we can easily look up the information of the clicked photo
 
-        //Use jQuery to get the photo unique id from the click event delegate target
+        //Use jQuery to get the photo unique id from the click event current target
         const photoId = $(event.currentTarget).attr('data');
 
         // Get the total number of votes once from Firebase and tell Firebase to increment that number by 1
@@ -143,8 +142,8 @@ function loadParadePhotos(photos) {
     const photosContainer = $('<div></div>').attr('id', 'photos_container');
 
     // Loop through parade photos and for each photo:
-    // Use jQuery to create a div.photo_container with an id of the photo
-    // Inside the photo_container append p.photo_name img.photo and a vote button
+    // Use jQuery to create a div.photo_container
+    // Inside the photo_container append p.photo_name img.photo and a vote button (with the id of the photo as the button data attribute)
     // Use jQuery to append div.photo_container to div#photos_container
     photos.map(photo => {
         const photoContainer = $('<div></div>').addClass('photo_container')
